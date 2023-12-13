@@ -14,8 +14,6 @@ RUN npm run build -- --mode production
 # production stage
 FROM nginx:stable-alpine as production-stage
 
-RUN rm /etc/nginx/conf.d/default.conf
-
 COPY --from=build-stage /app/dist /usr/share/nginx/html
 
 RUN nginx -t
