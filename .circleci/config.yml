@@ -6,7 +6,11 @@ jobs:
       - image: cimg/node:21.4.0
     steps:
       - checkout
-      - run: ls -l
+      - run: cd frontend
+      - run: npm i
+      - run: npm run build -- --mode production
+      - run: ls -l ~/.ssh
+      #- run: sudo rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh' -s dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
 
 workflows:
   version: 2
