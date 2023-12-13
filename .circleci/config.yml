@@ -9,10 +9,9 @@ jobs:
     steps:
       - checkout
       - run:
-          name: Docker Compose up service
+          name: check node version
           command: |
-            cd ~/repo/deployment
-            docker compose build
+            node -v
 
 workflows:
   version: 2

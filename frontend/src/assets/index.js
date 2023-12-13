@@ -21,10 +21,9 @@ import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.svg";
 
-import meta from "./company/meta.png";
-import shopify from "./company/shopify.png";
-import starbucks from "./company/starbucks.png";
-import tesla from "./company/tesla.png";
+import cybermint from "./company/cybermint.png";
+import currencyassist from "./company/currencyassist.png"
+import digitata from "./company/digitata.png"
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
@@ -43,6 +42,8 @@ export {
   docker,
   figma,
   git,
+  digitata,
+  currencyassist,
   html,
   javascript,
   mongodb,
@@ -52,10 +53,7 @@ export {
   tailwind,
   typescript,
   threejs,
-  meta,
-  shopify,
-  starbucks,
-  tesla,
+  cybermint,
   carrent,
   jobit,
   tripguide,
