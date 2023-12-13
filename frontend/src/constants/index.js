@@ -41,11 +41,11 @@ export const navLinks = [
 
 const services = [
   {
-    title: "Web Developer",
+    title: "Fullstack Developer",
     icon: web,
   },
   {
-    title: "React Native Developer",
+    title: "DevOps Engineer",
     icon: mobile,
   },
   {
@@ -53,7 +53,7 @@ const services = [
     icon: backend,
   },
   {
-    title: "Content Creator",
+    title: "Cloud Engineer",
     icon: creator,
   },
 ];
@@ -115,16 +115,17 @@ const technologies = [
 
 const experiences = [
   {
-    title: "Backend / fullstack developer",
+    title: "Backend developer",
     company_name: "Cyber-Mint (Pty) Ltd",
     icon: cybermint,
     iconBg: "#383E56",
     date: "March 2021 - September 2023",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Solutions architected the Django Backend for the company's main project, Teamfu.",
+      "Collaborated with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
+      "Set up CI / CD, containerization, and orchestration for various projects.",
+      "Participated in code reviews and provided constructive feedback to other developers.",
+      "Contributed to Frontend development and design in VueJS."
     ],
   },
   {
@@ -134,23 +135,21 @@ const experiences = [
     iconBg: "#383E56",
     date: "Jan 2021 - Feb 2022",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Built a django backend to aid in automating many of the bussiness's manual tasks.",
+      "Collaborated with clients and team members to define and complete requiremented tasks.",
+      "Addressed technical debt and broken legacy code.",
     ],
   },
   {
-    title: "Web Developer",
-    company_name: "Shopify",
+    title: "Junior DevOps Engineer",
+    company_name: "Digitata (Pty) Ltd",
     icon: digitata,
     iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
+    date: "Oct 2023 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining web applications using Vue.js and other related technologies.",
+      "Collaborating cross-departmentally to optimize customer experience, incident resolution, and strategic planning",
+      "Maintaining and putting existing deploy architecture into code, using ansible, terrafrom and related tools",
     ],
   },
 ];
