@@ -1,0 +1,21 @@
+version: 2.1
+
+jobs:
+  build:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    working_directory: ~/repo
+    resource_class: medium
+    steps:
+      - checkout
+      - run:
+          name: Docker Compose up service
+          command: |
+            cd ~/repo/deployment
+            docker compose up --build
+
+workflows:
+  version: 2
+  untagged_build_test:
+    jobs:
+      - build
