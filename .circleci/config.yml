@@ -4,6 +4,7 @@ jobs:
   build:
     docker:
       - image: cimg/node:21.4.0
+    working_directory: ~/repo
     steps:
       - checkout
       - run:
@@ -12,10 +13,26 @@ jobs:
             cd frontend
             npm i
             npm run build -- --mode production
-      - run: rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s frontend/dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
+      - run: persist_to_workspace:
+          root: frontend
+          paths:
+            - dist
+
+  deploy:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    steps:
+      - attach_workspace:
+          at: ~/repo/frontend/dist
+      - run: ls -l ~/repo/frontend/dist
+
+      # - run: rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s frontend/dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
 
 workflows:
   version: 2
   untagged_build_test:
     jobs:
       - build
+      - deploy:
+          requires:
+            - build
