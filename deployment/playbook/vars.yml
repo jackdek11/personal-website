@@ -1,0 +1,6 @@
+---
+vm_user: vagrant
+vm_password: "{{ lookup('env', 'VM_PASSWORD') }}"
+sys_packages: ['curl', 'ufw']
+server_domain_name: "{{ lookup('env', 'SERVER_DOMAIN_NAME') }}"
+server_domain_email: "{{ lookup('env', 'SERVER_DOMAIN_EMAIL') }}"
