@@ -12,7 +12,7 @@ jobs:
           name: Docker Compose up service
           command: |
             cd ~/repo/deployment
-            docker compose up --build
+            docker compose build
 
 workflows:
   version: 2
