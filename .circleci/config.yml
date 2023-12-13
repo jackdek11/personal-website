@@ -13,7 +13,7 @@ jobs:
             cd frontend
             npm i
             npm run build -- --mode production
-      - run: persist_to_workspace:
+      - persist_to_workspace:
           root: frontend
           paths:
             - dist
