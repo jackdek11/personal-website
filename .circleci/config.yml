@@ -2,16 +2,11 @@ version: 2.1
 
 jobs:
   build:
-    machine:
-      image: ubuntu-2204:2022.07.1
-    working_directory: ~/repo
-    resource_class: medium
+    docker:
+      - image: cimg/node:21.4.0
     steps:
       - checkout
-      - run:
-          name: check node version
-          command: |
-            node -v
+      - run: node --version
 
 workflows:
   version: 2
