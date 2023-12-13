@@ -12,8 +12,7 @@ jobs:
             cd frontend
             npm i
             npm run build -- --mode production
-      - run: cat ~/.ssh/id_rsa.pub
-      - run: sudo rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
+      - run: sudo rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s frontend/dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
 
 workflows:
   version: 2
