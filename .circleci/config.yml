@@ -23,7 +23,7 @@ jobs:
       image: ubuntu-2204:2022.07.1
     steps:
       - attach_workspace:
-          at: ~/repo/frontend/dist
+          at: ~/repo/frontend
       - run: ls -l ~/repo/frontend/dist
 
       # - run: rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s frontend/dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
