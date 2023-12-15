@@ -206,7 +206,7 @@ const projects = [
   {
     name: 'Teamfu',
     description:
-      'Teamfu is an intuitive project management tool, with a strong design philosophy that does away with unnecessary constraints and excessive control. It works the way high-performance teams should work - just get stuff done.',
+      'Teamfu is an intuitive project management tool, with a strong design philosophy that does away with unnecessary constraints and excessive control. It works the way teams should work - just get stuff done.',
     tags: [
       {
         name: 'python',
