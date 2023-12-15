@@ -20,7 +20,7 @@ import {
   currencyassist,
   carrent,
   jobit,
-  tripguide,
+  repl,
   threejs,
 } from '../assets';
 
@@ -183,67 +183,67 @@ const testimonials = [
 
 const projects = [
   {
-    name: 'Car Rent',
+    name: 'wg-vpn',
     description:
-      'Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.',
+      'An ultra-light implementation of a simplified configuration service for Wireguard deployments, designed for use with Linux clients.',
     tags: [
       {
-        name: 'react',
+        name: 'python',
         color: 'blue-text-gradient',
       },
       {
-        name: 'mongodb',
+        name: 'ansible',
         color: 'green-text-gradient',
       },
       {
-        name: 'tailwind',
-        color: 'pink-text-gradient',
-      },
-    ],
-    image: carrent,
-    source_code_link: 'https://github.com/',
-  },
-  {
-    name: 'Job IT',
-    description:
-      'Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.',
-    tags: [
-      {
-        name: 'react',
-        color: 'blue-text-gradient',
-      },
-      {
-        name: 'restapi',
-        color: 'green-text-gradient',
-      },
-      {
-        name: 'scss',
+        name: 'opensource',
         color: 'pink-text-gradient',
       },
     ],
     image: jobit,
-    source_code_link: 'https://github.com/',
+    source_code_link: 'https://github.com/Cyber-Mint/wg-vpn',
   },
   {
-    name: 'Trip Guide',
+    name: 'Teamfu',
     description:
-      'A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.',
+      'Teamfu is an intuitive project management tool, with a strong design philosophy that does away with unnecessary constraints and excessive control. It works the way high-performance teams should work - just get stuff done.',
     tags: [
       {
-        name: 'nextjs',
+        name: 'python',
         color: 'blue-text-gradient',
       },
       {
-        name: 'supabase',
+        name: 'vue',
         color: 'green-text-gradient',
       },
       {
-        name: 'css',
+        name: 'cloud',
         color: 'pink-text-gradient',
       },
     ],
-    image: tripguide,
-    source_code_link: 'https://github.com/',
+    image: carrent,
+    teamfu_link: 'https://teamfu.tech/',
+  },
+  {
+    name: 'Repl',
+    description:
+      'Still in active planning and devlopment, repl is an application designed to listen to database replication, and broadcast transactions via websocket connection.',
+    tags: [
+      {
+        name: 'golang',
+        color: 'blue-text-gradient',
+      },
+      {
+        name: 'data',
+        color: 'green-text-gradient',
+      },
+      {
+        name: 'websocket',
+        color: 'pink-text-gradient',
+      },
+    ],
+    image: repl,
+    source_code_link: 'https://github.com/jackdek11/repl',
   },
 ];
 
