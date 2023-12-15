@@ -37,7 +37,6 @@ export {
   mobile,
   web,
   github,
-  repl,
   menu,
   teamfu,
   close,
