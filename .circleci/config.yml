@@ -21,6 +21,7 @@ jobs:
   deploy:
     machine:
       image: ubuntu-2204:2022.07.1
+    working_directory: ~/repo
     steps:
       - attach_workspace:
           at: ~/repo/frontend
