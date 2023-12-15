@@ -26,6 +26,10 @@ jobs:
       - attach_workspace:
           at: ~/repo/frontend
       - run: rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s frontend/dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html
+    filters:
+      branches:
+        only:
+          - main
 
 workflows:
   version: 2
