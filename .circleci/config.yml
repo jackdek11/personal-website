@@ -92,6 +92,9 @@ workflows:
       - build-backend:
           requires:
             - git-leaks
+      - test-backend:
+          requires:
+            - build-backend
       - deploy-frontend:
           requires:
             - build-frontend
