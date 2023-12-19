@@ -3,3 +3,5 @@ dist/
 inventory.ini
 package-lock.json
 .env
+venv
+.idea
