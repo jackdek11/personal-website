@@ -1,7 +1,7 @@
 version: 2.1
 
 jobs:
-  build:
+  build-frontend:
     docker:
       - image: cimg/node:21.4.0
     working_directory: ~/repo
@@ -22,6 +22,19 @@ jobs:
           paths:
             - dist
 
+  build-backend:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - run:
+          name: Build and tag wg-vpn image
+          command: |
+            cd ~/repo/backend
+            docker build -t website-backend:$CIRCLE_TAG .
+            docker tag website-backend:$CIRCLE_TAG $IMAGE_NAME:latest
+
   git-leaks:
     machine:
       image: ubuntu-2204:2022.07.1
@@ -33,7 +46,7 @@ jobs:
           command: |
             docker run -v ~/repo:/path zricethezav/gitleaks:latest detect --source="/path" -v
 
-  deploy:
+  deploy-frontend:
     machine:
       image: ubuntu-2204:2022.07.1
     working_directory: ~/repo
@@ -46,9 +59,10 @@ workflows:
   version: 2
   untagged_build_test:
     jobs:
-      - build
+      - build-frontend
+      - build-backend
       - git-leaks
-      - deploy:
+      - deploy-frontend:
           requires:
-            - build
+            - build-frontend
             - git-leaks
