@@ -7,12 +7,14 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
+    "deploy": "vite build && rsync -r -t -p -v --progress -s dist/ ${SSH_USER}@${SERVER_IP}:/usr/share/nginx/html",
     "format": "prettier 'src/**/*.jsx' 'src/**/*.js' --write"
   },
   "dependencies": {
     "@emailjs/browser": "^3.10.0",
     "@react-three/drei": "^9.56.24",
     "@react-three/fiber": "^8.11.1",
+    "caniuse-lite": "^1.0.30001570",
     "framer-motion": "^9.0.7",
     "maath": "^0.5.2",
     "react": "^18.2.0",
