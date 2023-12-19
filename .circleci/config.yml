@@ -102,6 +102,8 @@ jobs:
       image: ubuntu-2204:2022.07.1
     working_directory: ~/repo
     steps:
+      - run: sudo apt -y install software-properties-common
+      - run: sudo apt-add-repository ppa:ansible/ansible
       - run: sudo apt-get -y update
       - run: sudo apt-get install -y git curl ansible sshpass
       - checkout
@@ -112,11 +114,17 @@ jobs:
             - "ec:8f:0e:d6:7f:78:32:a6:a6:bd:78:5b:10:f5:3a:f1"
       - run: ssh-keyscan -H jackdekock.com >> ~/.ssh/known_hosts
       - run: rsync -r -t -p -v --progress -e 'ssh -i ~/.ssh/id_rsa' -s backend/.builds/website-backend.tar ${SSH_USER}@${SERVER_IP}:/tmp/website-backend.tar
+      - run: 
+          name: Create inventory file
+          command: |
+            cd ansible
+            touch inventory.ini
+            echo "[remote_server]" >inventory.ini
+            echo ${SERVER_IP} >>inventory.ini
       - run:
           name: Deploy to host server(s)
           command: |
             cd ansible
-            echo ${SERVER_IP} >>inventory.ini
             ansible-galaxy collection install community.docker
             ansible-playbook deploy-backend.yml -i inventory.ini -u vagrant
 
