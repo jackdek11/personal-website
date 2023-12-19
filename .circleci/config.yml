@@ -7,8 +7,14 @@ jobs:
     working_directory: ~/repo
     steps:
       - checkout
+      - run: 
+          name: build .env file
+          command: |
+            cd frontend
+            touch .env
+            echo 'VITE_APP_BACKEND_URL="https://${SERVER_IP}/api/email/"' >.env
       - run:
-          name: built dist folder
+          name: build dist folder
           command: |
             cd frontend
             npm i
