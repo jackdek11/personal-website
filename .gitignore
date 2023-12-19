@@ -2,3 +2,4 @@ node_modules/
 dist/
 inventory.ini
 package-lock.json
+.env
