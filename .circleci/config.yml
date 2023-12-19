@@ -29,6 +29,37 @@ jobs:
           command: |
             cd ~/repo/backend
             docker build -t website-backend:latest .
+        run:
+          name: export backend image to tar
+          command: |
+            cd ~/repo/backend
+            mkdir -p .builds
+            cd .builds/
+            docker save -o website-backend.tar website-backend
+      - persist_to_workspace:
+          root: backend
+          paths:
+            - .builds
+            - postman
+            - quickstart
+
+  test-backend:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    working_directory: ~/repo
+    steps:
+      - attach_workspace:
+          at: ~/repo/backend
+      - run: 
+          name: load build image
+          command: |
+            cd ~/repo/backend/.builds/
+            docker load < website-backend.tar
+      - run: 
+          name: bring up backend
+          command: |
+            cd ~/repo/backend/quickstart/
+            docker-compose up
 
   git-leaks:
     machine:
