@@ -1,0 +1,15 @@
+version: "3.2"
+
+services:
+
+  backend:
+    container_name: backend
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    command: 'uvicorn main:app --host 0.0.0.0 --port 8000'
+    environment:
+      - WEBHOOK_URL=${WEBHOOK_URL}
+    ports:
+      - '127.0.0.1:8000:8000'
