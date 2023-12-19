@@ -15,14 +15,10 @@
         group: wheel
         mode: '0644'
 
-    - name: Deploy BE | Load all image(s) from the given tar file
-      community.docker.docker_image_load:
-        path: /tmp/website-backend.tar
-      register: result
-
-    - name: Deploy BE | Print the loaded image names
-      ansible.builtin.debug:
-        msg: "Loaded the following images: {{ result.image_names | join(', ') }}"
+    - name: Deploy BE | Tear down existing services
+      community.docker.docker_compose:
+        project_src: /home
+        state: absent
 
     - name: Deploy BE | Prune everything (including non-dangling images)
       community.docker.docker_prune:
@@ -33,3 +29,21 @@
         networks: true
         volumes: true
         builder_cache: true
+
+    - name: Deploy BE | Load all image(s) from the given tar file
+      community.docker.docker_image_load:
+        path: /tmp/website-backend.tar
+      register: result
+
+    - name: Deploy BE | Print the loaded image names
+      ansible.builtin.debug:
+        msg: "Loaded the following images: {{ result.image_names | join(', ') }}"
+
+    - name: Deploy BE | Create and start services
+      community.docker.docker_compose:
+        project_src: /home
+      register: output
+
+    - name: Deploy BE | Show results
+      ansible.builtin.debug:
+        var: output
