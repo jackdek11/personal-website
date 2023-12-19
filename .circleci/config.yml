@@ -59,7 +59,7 @@ jobs:
           name: bring up backend
           command: |
             cd ~/repo/backend/quickstart/
-            docker-compose up
+            docker-compose up -d
 
   git-leaks:
     machine:
