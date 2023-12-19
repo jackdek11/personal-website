@@ -2,7 +2,28 @@
 - name: Deploy Backend to remote
   hosts: remote_server
   gather_facts: true
+  become: true
   vars_files:
     - vars.yml
 
   tasks:
+    - name: Deploy BE | ensure docker compose in /home/
+      ansible.builtin.template:
+        src: compose.yml.j2
+        dest: /home/docker-compose.yml
+        owner: root
+        group: wheel
+        mode: '0644'
+
+    - name: Deploy BE | Copy .tar file over to remote
+      ansible.builtin.file:
+        src: 
+
+    - name: Deploy BE | Load all image(s) from the given tar file
+      community.docker.docker_image_load:
+        path: /tmp/website-backend.tar
+      register: result
+
+    - name: Deploy BE | Print the loaded image names
+      ansible.builtin.debug:
+        msg: "Loaded the following images: {{ result.image_names | join(', ') }}"
