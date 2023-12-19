@@ -1,5 +1,6 @@
 from fastapi import FastAPI, status
 from fastapi.openapi.utils import get_openapi
+from fastapi.middleware.cors import CORSMiddleware
 from discord_webhook import DiscordWebhook
 
 from models import RequestBody, HealthCheck
@@ -10,12 +11,23 @@ import logging
 
 app = FastAPI()
 
+origins = ["*"]  # Mind result in spamming.. I am going to trust the internet for now
+
 logger = logging.getLogger(__name__)
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 
 
 @app.post("/api/email/")
 async def eft_checkout_request_view(body: RequestBody):
-    built_msg = f"**New message received:**\n```email: {body.email}\nname: {body.name}\nmsg: {body.email}```"
+    built_msg = f"**New message received:**\n```email: {body.email}\nname: {body.name}\nmsg: {body.msg}```"
+    logger.debug(f"Receiving: {built_msg}")
     webhook = DiscordWebhook(
         url=settings.webhook_url,
         content=built_msg)
