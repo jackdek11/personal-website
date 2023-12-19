@@ -119,6 +119,34 @@ jobs:
             echo ${SERVER_IP} >>inventory.ini
             ansible-playbook deploy-backend.yml -i inventory.ini -u vagrant
 
+  ansible-lint:
+    docker:
+      - image: python@sha256:${PYTHON_IMAGE_SHA}
+    resource_class: small
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          key: deps1-{{ .Environment.CACHE_FLAG }}
+      - run:
+          name: Install ansible and ansible-lint
+          command: |
+            python3 -m venv .venv
+            . .venv/bin/activate
+            pip install ansible ansible-lint
+      - save_cache:
+          key: deps1-{{ .Environment.CACHE_FLAG }}
+          paths:
+            - ".venv"
+      - run:
+          name: Lint playbook with ansible lint
+          command: |
+            python3 -m venv .venv
+            . .venv/bin/activate
+            ansible-lint --version
+            cd ~/repo/ansible/
+            ansible-lint
+
   git-leaks:
     machine:
       image: ubuntu-2204:2022.07.1
@@ -144,6 +172,7 @@ workflows:
   untagged_build_test:
     jobs:
       - git-leaks
+      - ansible-lint
       - build-frontend:
           requires:
             - git-leaks
@@ -164,6 +193,7 @@ workflows:
       - deploy-backend:
           requires:
             - test-backend
+            - ansible-lint
           filters:
             branches:
               only:
