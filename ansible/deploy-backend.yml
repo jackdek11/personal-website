@@ -15,10 +15,6 @@
         group: wheel
         mode: '0644'
 
-    - name: Deploy BE | Copy .tar file over to remote
-      ansible.builtin.file:
-        src: 
-
     - name: Deploy BE | Load all image(s) from the given tar file
       community.docker.docker_image_load:
         path: /tmp/website-backend.tar
@@ -27,3 +23,13 @@
     - name: Deploy BE | Print the loaded image names
       ansible.builtin.debug:
         msg: "Loaded the following images: {{ result.image_names | join(', ') }}"
+
+    - name: Deploy BE | Prune everything (including non-dangling images)
+      community.docker.docker_prune:
+        containers: true
+        images: true
+        images_filters:
+          dangling: false
+        networks: true
+        volumes: true
+        builder_cache: true
