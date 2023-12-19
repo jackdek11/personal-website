@@ -28,8 +28,7 @@ jobs:
           name: Build and tag wg-vpn image
           command: |
             cd ~/repo/backend
-            docker build -t backend:$CIRCLE_TAG .
-            docker tag backend:$CIRCLE_TAG $IMAGE_NAME:latest
+            docker build -t website-backend:latest .
 
   git-leaks:
     machine:
