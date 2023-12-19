@@ -97,6 +97,27 @@ jobs:
           path: ~/repo/results/backend-swagger.json
           destination: backend-swagger.json
 
+  deploy-backend:
+    machine:
+      image: ubuntu-2204:2022.07.1
+    docker:
+      - image: ubuntu:latest
+    resource_class: small
+    steps:
+      - run: apt-get -y update
+      - run: apt-get install -y git curl ansible sshpass
+      - checkout
+      - add_ssh_keys:
+          fingerprints:
+            - "ec:8f:0e:d6:7f:78:32:a6:a6:bd:78:5b:10:f5:3a:f1"
+      - run: ssh-keyscan -H jackdekock.com >> ~/.ssh/known_hosts
+      - run:
+          name: Deploy to host server(s)
+          command: |
+            cd ansible
+            echo ${SERVER_IP} >>inventory.ini
+            ansible-playbook deploy-backend.yml -i inventory.ini -u vagrant
+
   git-leaks:
     machine:
       image: ubuntu-2204:2022.07.1
