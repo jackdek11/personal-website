@@ -60,6 +60,42 @@ jobs:
           command: |
             cd ~/repo/backend/quickstart/
             docker-compose up -d
+      - run: |
+          nvm install v18
+      - run:
+          name: Install Newman Using NPM
+          command: |
+            npm install -g newman
+            npm install -g newman-reporter-htmlextra
+      - run: newman run -h
+      - run:
+          name: Running postman tests
+          command: |
+            sleep 4
+            mkdir -p ~/repo/results/junit
+            sed -i '1s/^/\xef\xbb\xbf/' \
+              ~/repo/backend/postman/backend-tests.json
+            newman run -k ~/repo/backend/postman/backend-tests.json \
+              -r cli,htmlextra,junit \
+              --working-dir ~/repo/backend/postman \
+              --reporter-htmlextra-export ~/repo/results \
+              --reporter-htmlextra-browserTitle "Backend Test Dashboard" \
+              --reporter-htmlextra-title "Backend Test Dashboard" \
+              --reporter-junit-export ~/repo/results/junit/results.xml \
+              --insecure
+      - store_artifacts:
+          path: ~/repo/results
+          destination: integration-test-results
+      - store_test_results:
+          path: ~/repo/results/junit
+      - run:
+          name: Generate wireguard swagger file
+          command: |
+            curl localhost:8000/openapi.json \
+              > ~/repo/results/backend-swagger.json
+      - store_artifacts:
+          path: ~/repo/results/backend-swagger.json
+          destination: backend-swagger.json
 
   git-leaks:
     machine:
