@@ -155,6 +155,7 @@ workflows:
       - deploy-frontend:
           requires:
             - build-frontend
+            - test-backend
           filters:
             branches:
               only:
