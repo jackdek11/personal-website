@@ -11,7 +11,7 @@ import logging
 
 app = FastAPI()
 
-origins = ["*"]  # Mind result in spamming.. I am going to trust the internet for now
+origins = ["*"]  # Might result in spamming.. I am going to trust the internet for now
 
 logger = logging.getLogger(__name__)
 
