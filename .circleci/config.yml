@@ -101,8 +101,8 @@ jobs:
     machine:
       image: ubuntu-2204:2022.07.1
     steps:
-      - run: apt-get -y update
-      - run: apt-get install -y git curl ansible sshpass
+      - run: sudo apt-get -y update
+      - run: sudo apt-get install -y git curl ansible sshpass
       - checkout
       - attach_workspace:
           at: ~/repo/backend
@@ -161,7 +161,7 @@ workflows:
                 - main
       - deploy-backend:
           requires:
-            - build-backend
+            - test-backend
           filters:
             branches:
               only:
