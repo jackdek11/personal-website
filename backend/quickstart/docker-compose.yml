@@ -4,8 +4,9 @@ services:
 
   backend:
     container_name: backend
+    image: website-backend
     build:
-      context: .
+      context: ../
       dockerfile: Dockerfile
     restart: unless-stopped
     command: 'uvicorn main:app --host 0.0.0.0 --port 8000'
