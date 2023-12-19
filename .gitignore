@@ -3,3 +3,8 @@ dist/
 inventory.ini
 package-lock.json
 .env
+venv
+venv/
+.idea
+__pycache__
+*.pyc
