@@ -159,3 +159,11 @@ workflows:
             branches:
               only:
                 - main
+      - deploy-backend:
+          requires:
+            - build-backend
+          filters:
+            branches:
+              only:
+                - main
+
