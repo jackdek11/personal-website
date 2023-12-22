@@ -12,7 +12,7 @@ jobs:
           command: |
             cd frontend
             touch .env
-            echo 'VITE_APP_BACKEND_URL="https://${SERVER_IP}/api/email/"' >.env
+            echo 'VITE_APP_BACKEND_URL="https://${DOMAIN}/api/email/"' >.env
       - run:
           name: build dist folder
           command: |
