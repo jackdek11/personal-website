@@ -188,12 +188,8 @@ workflows:
     jobs:
       - git-leaks
       - ansible-lint
-      - build-frontend:
-          requires:
-            - git-leaks
-      - build-backend:
-          requires:
-            - git-leaks
+      - build-frontend
+      - build-backend
       - test-backend:
           requires:
             - build-backend
