@@ -3,7 +3,7 @@ version: 2.1
 jobs:
   build-frontend:
     docker:
-      - image: cimg/node:21.4.0
+      - image: cimg/node@sha256:${NODE_HASH}
     working_directory: ~/repo
     steps:
       - checkout
@@ -162,6 +162,33 @@ jobs:
             cd ~/repo/ansible/
             ansible-lint
 
+  checkov:
+    docker:
+      - image: python@sha256:${PYTHON_IMAGE_SHA}
+    resource_class: small
+    working_directory: ~/repo
+    steps:
+      - checkout
+      - restore_cache:
+          key: checkov
+      - run:
+          name: Install Checkov
+          command: |
+            python3 -m venv .venv
+            . .venv/bin/activate
+            pip install checkov
+      - save_cache:
+          key: checkov
+          paths:
+            - ".venv"
+      - run:
+          name: Run Checkov against repo
+          command: |
+            python3 -m venv .venv
+            . .venv/bin/activate
+            cd ~/repo/
+            checkov -d .
+
   git-leaks:
     machine:
       image: ubuntu-2204:2022.07.1
@@ -190,6 +217,7 @@ workflows:
       - ansible-lint
       - build-frontend
       - build-backend
+      - checkov
       - test-backend:
           requires:
             - build-backend
@@ -197,6 +225,7 @@ workflows:
           requires:
             - build-frontend
             - test-backend
+            - checkov
           filters:
             branches:
               only:
@@ -205,6 +234,7 @@ workflows:
           requires:
             - test-backend
             - ansible-lint
+            - checkov
           filters:
             branches:
               only:
