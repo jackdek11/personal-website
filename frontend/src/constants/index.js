@@ -44,13 +44,13 @@ export const navLinks = [
     languages: [
       {
         id: 'english',
-        icon: english
+        icon: english,
       },
       {
         id: 'german',
-        icon: german
-      }
-    ]
+        icon: german,
+      },
+    ],
   },
 ];
 
