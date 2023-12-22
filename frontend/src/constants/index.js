@@ -9,6 +9,8 @@ import {
   css,
   reactjs,
   redux,
+  english,
+  german,
   tailwind,
   nodejs,
   mongodb,
@@ -36,6 +38,19 @@ export const navLinks = [
   {
     id: 'contact',
     title: 'Contact',
+  },
+  {
+    id: 'lang',
+    languages: [
+      {
+        id: 'english',
+        icon: english
+      },
+      {
+        id: 'german',
+        icon: german
+      }
+    ]
   },
 ];
 
