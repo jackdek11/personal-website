@@ -8,6 +8,9 @@ import teamfu from './teamfu.png';
 import menu from './menu.svg';
 import close from './close.svg';
 
+import german from './languages/german.png';
+import english from './languages/english.png';
+
 import css from './tech/css.png';
 import docker from './tech/docker.png';
 import figma from './tech/figma.png';
@@ -38,6 +41,8 @@ export {
   web,
   github,
   menu,
+  german,
+  english,
   teamfu,
   close,
   css,
