@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import axios from "axios";
+import axios from 'axios';
 
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
@@ -37,7 +37,7 @@ const Contact = () => {
       .post(baseURL, {
         name: form.name,
         msg: form.message,
-        email: form.email
+        email: form.email,
       })
       .then(
         () => {
