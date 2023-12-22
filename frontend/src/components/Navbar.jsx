@@ -3,12 +3,14 @@ import { Link } from 'react-router-dom';
 
 import { styles } from '../styles';
 import { navLinks } from '../constants';
-import { logo, menu, close, english } from '../assets';
+import { logo, menu, close } from '../assets';
+import LanguageSelector from './LanguageSelector';
 
 const Navbar = () => {
   const [active, setActive] = useState('');
   const [toggle, setToggle] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const currentLang = 'english';
 
   useEffect(() => {
     const handleScroll = () => {
@@ -57,7 +59,11 @@ const Navbar = () => {
               } hover:text-white text-[18px] font-medium cursor-pointer flex items-center`}
               onClick={() => setActive(nav.title)}
             >
-              {nav.title ? <a href={`#${nav.id}`}>{nav.title}</a> : <img src={english} alt="language" className="w-12 h-12 object-contain" />}
+              {nav.title ? (
+                <a href={`#${nav.id}`}>{nav.title}</a>
+              ) : (
+                <LanguageSelector title={currentLang} />
+              )}
             </li>
           ))}
         </ul>
