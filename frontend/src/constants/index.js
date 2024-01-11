@@ -43,18 +43,22 @@ const services = [
   {
     title: 'Fullstack Developer',
     icon: web,
+    hoverText: 'blah',
   },
   {
     title: 'DevOps Engineer',
     icon: mobile,
+    hoverText: 'blah',
   },
   {
     title: 'Backend Developer',
     icon: backend,
+    hoverText: 'blah',
   },
   {
     title: 'Cloud Engineer',
     icon: creator,
+    hoverText: 'blah',
   },
 ];
 
