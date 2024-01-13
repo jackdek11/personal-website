@@ -1,28 +1,16 @@
 import { React } from 'react';
+import HoverLink from './HoverLink';
+import HoverDescription from './HoverDescription';
 
 const HoverComponent = ({ object }) => {
   const formattedItems = [];
 
   object.forEach((item, index) => {
     if (typeof item === 'string') {
-      formattedItems.push(
-        <div key={index}>
-          <p>{item}</p>
-          <br />
-        </div>,
-      );
+      formattedItems.push(<HoverDescription item={item} />);
     } else if (typeof item === 'object') {
       item.forEach((subitem, subindex) => {
-        formattedItems.push(
-          <a
-            href={subitem.link}
-            key={subitem.title}
-            target="_blank"
-            rel="noreferrer"
-          >
-            {subitem.title}
-          </a>,
-        );
+        formattedItems.push(<HoverLink subitem={subitem} />);
       });
     }
     // Add more conditions for other types if needed
