@@ -53,7 +53,7 @@ const KinectComponent = () => {
           maxPolarAngle={Math.PI / 2}
           minPolarAngle={Math.PI / 2}
         />
-        <Stars radius={500} depth={50} count={1000} factor={10} />
+        <Stars radius={500} depth={50} count={1000} factor={15} />
       </Canvas>
       <div className="layer" />
       <Loader />
