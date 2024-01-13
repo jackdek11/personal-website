@@ -45,10 +45,16 @@ const services = [
     icon: web,
     hoverText: [
       'Some text for being a fullstack dev',
-      {
-        'This website': '#',
-        python: 'https://github.com/Cyber-Mint/wg-vpn',
-      },
+      [
+        {
+          title: 'This website',
+          links: '#',
+        },
+        {
+          title: 'python',
+          link: 'https://github.com/Cyber-Mint/wg-vpn',
+        },
+      ],
     ],
   },
   {
@@ -56,10 +62,12 @@ const services = [
     icon: mobile,
     hoverText: [
       'Some text on being a devops engineer',
-      {
-        'CI / CD':
-          'https://app.circleci.com/pipelines/github/jackdek11/personal-website?branch=main',
-      },
+      [
+        {
+          title: 'CI / CD',
+          link: 'https://app.circleci.com/pipelines/github/jackdek11/personal-website?branch=main',
+        },
+      ],
     ],
   },
   {
@@ -67,9 +75,12 @@ const services = [
     icon: backend,
     hoverText: [
       'Some text for being a backend dev',
-      {
-        Teamfu: 'https://teamfu.tech/',
-      },
+      [
+        {
+          title: 'Teamfu',
+          link: 'https://teamfu.tech/',
+        },
+      ],
     ],
   },
   {
@@ -77,9 +88,11 @@ const services = [
     icon: creator,
     hoverText: [
       'Some text for being a cloud engineer',
-      {
-        terraform: 'https://github.com/jackdek11/learning-terraform-3087701',
-      },
+      [
+        {
+          Terraform: 'https://github.com/jackdek11/learning-terraform-3087701',
+        },
+      ],
     ],
   },
 ];
