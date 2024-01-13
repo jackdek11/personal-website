@@ -18,19 +18,8 @@ title: Space exploration [WLP series #8]
 function Model({ url }) {
   const { nodes } = useGLTF(url);
   return (
-    <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -7, 0]} scale={7}>
-      <group rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}>
-        <mesh
-          receiveShadow
-          castShadow
-          geometry={nodes.planet002.geometry}
-          material={nodes.planet002.material}
-        />
-        <mesh
-          geometry={nodes.planet003.geometry}
-          material={nodes.planet003.material}
-        />
-      </group>
+    <group rotation={[-Math.PI / 2, 0, 0]} position={[0, -7, 0]} scale={1}>
+      <group rotation={[Math.PI / 13.5, -Math.PI / 5.8, Math.PI / 5.6]}></group>
     </group>
   );
 }
@@ -55,7 +44,7 @@ const KinectComponent = () => {
           />
         </PerspectiveCamera>
         <Suspense fallback={null}>
-          <Model url="./header/scene.glb" />
+          <Model url="./space_boi.glb" />
         </Suspense>
         <OrbitControls
           autoRotate

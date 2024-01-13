@@ -227,6 +227,8 @@ workflows:
             - test-backend
             - checkov
           filters:
+            branches:
+              ignore: /.*/          
             tags:
               only:
                 - /^.*$/
@@ -236,6 +238,8 @@ workflows:
             - ansible-lint
             - checkov
           filters:
+            branches:
+              ignore: /.*/            
             tags:
               only:
                 - /^.*$/
