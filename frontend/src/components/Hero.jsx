@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion';
 
 import { styles } from '../styles';
-import { ComputersCanvas } from './canvas';
+import KinectComponent from './canvas/Heading';
 
 const Hero = () => {
   return (
@@ -19,14 +19,12 @@ const Hero = () => {
             Hi, I'm <span className="text-[#915EFF]">Jack</span>
           </h1>
           <p className={`${styles.heroSubText} mt-2 text-white-100`}>
-            I'm building, rebuilding, learning from what I've built
-            <br className="sm:block hidden" />
-            ... And rebuilding
+            let's build.
           </p>
         </div>
       </div>
 
-      <ComputersCanvas />
+      <KinectComponent />
 
       <div className="absolute xs:bottom-10 bottom-32 w-full flex justify-center items-center">
         <a href="#about">

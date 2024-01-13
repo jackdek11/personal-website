@@ -43,18 +43,44 @@ const services = [
   {
     title: 'Fullstack Developer',
     icon: web,
+    hoverText: [
+      'Some text for being a fullstack dev',
+      {
+        'This website': '#',
+        python: 'https://github.com/Cyber-Mint/wg-vpn',
+      },
+    ],
   },
   {
     title: 'DevOps Engineer',
     icon: mobile,
+    hoverText: [
+      'Some text on being a devops engineer',
+      {
+        'CI / CD':
+          'https://app.circleci.com/pipelines/github/jackdek11/personal-website?branch=main',
+      },
+    ],
   },
   {
     title: 'Backend Developer',
     icon: backend,
+    hoverText: [
+      'Some text for being a backend dev',
+      {
+        Teamfu: 'https://teamfu.tech/',
+      },
+    ],
   },
   {
     title: 'Cloud Engineer',
     icon: creator,
+    hoverText: [
+      'Some text for being a cloud engineer',
+      {
+        terraform: 'https://github.com/jackdek11/learning-terraform-3087701',
+      },
+    ],
   },
 ];
 

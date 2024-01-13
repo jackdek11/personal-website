@@ -227,16 +227,16 @@ workflows:
             - test-backend
             - checkov
           filters:
-            branches:
+            tags:
               only:
-                - main
+                - /^.*$/
       - deploy-backend:
           requires:
             - test-backend
             - ansible-lint
             - checkov
           filters:
-            branches:
+            tags:
               only:
-                - main
+                - /^.*$/
 
