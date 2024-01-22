@@ -1,7 +1,10 @@
 import { React, useState } from 'react';
 import { motion } from 'framer-motion';
 import HoverComponent from './HoverComponent';
-import { ServiceCardVariants, ServiceCardVariantsBox } from '../../constants/variants';
+import {
+  ServiceCardVariants,
+  ServiceCardVariantsBox,
+} from '../../constants/variants';
 
 const ServiceCard = ({ index, title, icon, hoverText }) => {
   const [isHovered, setIsHovered] = useState(false);

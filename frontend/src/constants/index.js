@@ -51,7 +51,7 @@ const services = [
           links: '#',
         },
         {
-          title: 'python',
+          title: 'Python',
           link: 'https://github.com/Cyber-Mint/wg-vpn',
         },
       ],
@@ -90,7 +90,8 @@ const services = [
       'Some text for being a cloud engineer',
       [
         {
-          Terraform: 'https://github.com/jackdek11/learning-terraform-3087701',
+          title: 'Terraform',
+          link: 'https://github.com/jackdek11/terraform-course/tree/main',
         },
       ],
     ],
@@ -157,7 +158,6 @@ const experiences = [
     title: 'Backend developer',
     company_name: 'Cyber-Mint (Pty) Ltd',
     icon: cybermint,
-    iconBg: '#383E56',
     date: 'March 2021 - September 2023',
     points: [
       "Solutions architected the Django Backend for the company's main project, Teamfu.",
@@ -171,7 +171,6 @@ const experiences = [
     title: 'Backend developer',
     company_name: 'Currency Assist (Pty) Ltd',
     icon: currencyassist,
-    iconBg: '#383E56',
     date: 'Jan 2021 - Feb 2022',
     points: [
       "Built a django backend to aid in automating many of the bussiness's manual tasks.",
@@ -183,7 +182,6 @@ const experiences = [
     title: 'Junior DevOps Engineer',
     company_name: 'Digitata (Pty) Ltd',
     icon: digitata,
-    iconBg: '#383E56',
     date: 'Oct 2023 - Present',
     points: [
       'Developing and maintaining web applications using Vue.js and other related technologies.',

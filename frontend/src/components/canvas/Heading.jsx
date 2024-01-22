@@ -44,7 +44,7 @@ const KinectComponent = () => {
           />
         </PerspectiveCamera>
         <Suspense fallback={null}>
-          <Model url="./space_boi.glb" />
+          {/* <Model url="./space_boi.glb" /> */}
         </Suspense>
         <OrbitControls
           autoRotate
