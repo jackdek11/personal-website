@@ -4,6 +4,7 @@ import axios from 'axios';
 
 import { styles } from '../styles';
 import { EarthCanvas } from './canvas';
+import KinectApp from './canvas/hmm';
 import { SectionWrapper } from '../hoc';
 import { slideIn } from '../utils/motion';
 
@@ -54,7 +55,7 @@ const Contact = () => {
           setLoading(false);
           console.error(error);
 
-          alert('Ahh, something went wrong. Please try again.');
+          alert('Something went wrong. Please try again.');
         },
       );
   };
@@ -118,12 +119,12 @@ const Contact = () => {
         </form>
       </motion.div>
 
-      <motion.div
+      {/* <motion.div
         variants={slideIn('right', 'tween', 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px]"
       >
-        <EarthCanvas />
-      </motion.div>
+        <KinectApp />
+      </motion.div> */}
     </div>
   );
 };
