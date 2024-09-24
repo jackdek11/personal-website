@@ -30,7 +30,7 @@ const Navbar = () => {
       className={`${
         styles.paddingX
       } w-full flex items-center py-5 fixed top-0 z-20 ${
-        scrolled ? 'bg-primary' : 'bg-transparent'
+        scrolled ? 'bg-[#333333]/60' : 'bg-transparent'
       }`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto">
@@ -43,7 +43,7 @@ const Navbar = () => {
           }}
         >
           <p className="text-white text-[18px] font-bold cursor-pointer flex ">
-            <span className="sm:block hidden">Fullstack and DevOps</span>
+            <span className="sm:block hidden">Fullstack and DevOps Engineer</span>
           </p>
         </Link>
 
@@ -79,7 +79,11 @@ const Navbar = () => {
                 <li
                   key={nav.id}
                   className={`font-poppins font-medium cursor-pointer text-[16px] ${
-                    active === nav.title ? 'text-white' : 'text-secondary'
+                    active === nav.title
+                      ? 'text-white'
+                      : scrolled
+                        ? 'text-secondary'
+                        : 'text-[#444444]'
                   }`}
                   onClick={() => {
                     setToggle(!toggle);

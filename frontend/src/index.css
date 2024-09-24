@@ -13,6 +13,10 @@
   color-scheme: dark;
 }
 
+.bg-tertiary {
+  background: #0B0B0B;
+}
+
 .hash-span {
   margin-top: -100px;
   padding-bottom: 100px;
@@ -34,17 +38,16 @@
 }
 
 .violet-gradient {
-  background: #804dee;
-  background: linear-gradient(-90deg, #804dee 0%, rgba(60, 51, 80, 0) 100%);
+  background: #c0c0c0;
+  background: linear-gradient(-90deg, #444444 0%, rgba(60, 51, 80, 0) 100%);
   background: -webkit-linear-gradient(
     -90deg,
-    #804dee 0%,
+    #c0c0c0 0%,
     rgba(60, 51, 80, 0) 100%
   );
 }
 
 .green-pink-gradient {
-  background: "#00cea8";
   background: linear-gradient(90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
   background: -webkit-linear-gradient(-90.13deg, #00cea8 1.9%, #bf61ff 97.5%);
 }
@@ -112,6 +115,27 @@
   ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.neon {
+  color: #fff;
+  animation: flicker 1.5s infinite alternate;
+}
+
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+      text-shadow:
+      0 0 5px #fff,
+      0 0 40px #11998e,
+      0 0 80px #38ef7d;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
 }
 
 /* canvas- styles */

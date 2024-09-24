@@ -22,6 +22,7 @@ import {
   jobit,
   repl,
   threejs,
+  cheqsite,
 } from '../assets';
 
 export const navLinks = [
@@ -41,45 +42,83 @@ export const navLinks = [
 
 const services = [
   {
-    title: 'Fullstack Developer',
-    icon: web,
+    title: 'Backend Developer',
+    icon: backend,
     hoverText: [
-      'Some text for being a fullstack dev',
-      {
-        'This website': '#',
-        python: 'https://github.com/Cyber-Mint/wg-vpn',
-      },
+      '3+ years of experience',
+      [
+        {
+          title: 'Teamfu',
+          link: 'https://teamfu.tech/',
+        },
+        {
+          title: 'Cheqsite ',
+          link: "https://play.google.com/store/apps/dev?id=7533131069311164381&hl=en&pli=1"
+        },
+        {
+          title: "Currency Assist",
+          link: 'https://currencyassist.co.za/'
+        }
+      ],
     ],
   },
   {
     title: 'DevOps Engineer',
     icon: mobile,
     hoverText: [
-      'Some text on being a devops engineer',
-      {
-        'CI / CD':
-          'https://app.circleci.com/pipelines/github/jackdek11/personal-website?branch=main',
-      },
+      '3+ years of experience',
+      [
+        {
+          title: 'This website',
+          link: 'https://app.circleci.com/pipelines/github/jackdek11/personal-website',
+        },
+        {
+          title: 'Teamfu ',
+          link: 'https://teamfu.tech/',
+        },
+        {
+          title: "Currency Assist",
+          link: 'https://currencyassist.co.za/'
+        }
+      ],
     ],
   },
   {
-    title: 'Backend Developer',
-    icon: backend,
+    title: 'Fullstack Developer',
+    icon: web,
     hoverText: [
-      'Some text for being a backend dev',
-      {
-        Teamfu: 'https://teamfu.tech/',
-      },
+      '2+ years of experience',
+      [
+        {
+          title: 'This website',
+          link: 'https://github.com/jackdek11/personal-website',
+        },
+        {
+          title: 'Teamfu ',
+          link: 'https://teamfu.tech/',
+        },
+        {
+          title: 'Wg-VPN',
+          link: 'https://github.com/Cyber-Mint/wg-vpn',
+        },
+      ],
     ],
   },
   {
     title: 'Cloud Engineer',
     icon: creator,
     hoverText: [
-      'Some text for being a cloud engineer',
-      {
-        terraform: 'https://github.com/jackdek11/learning-terraform-3087701',
-      },
+      '3+ years of experience',
+      [
+        {
+          title: 'Terraform',
+          link: 'https://github.com/jackdek11/terraform-course/tree/main',
+        },
+        {
+          title: 'Digitata',
+          link: 'https://digitata.com/'
+        }
+      ],
     ],
   },
 ];
@@ -144,7 +183,6 @@ const experiences = [
     title: 'Backend developer',
     company_name: 'Cyber-Mint (Pty) Ltd',
     icon: cybermint,
-    iconBg: '#383E56',
     date: 'March 2021 - September 2023',
     points: [
       "Solutions architected the Django Backend for the company's main project, Teamfu.",
@@ -158,7 +196,6 @@ const experiences = [
     title: 'Backend developer',
     company_name: 'Currency Assist (Pty) Ltd',
     icon: currencyassist,
-    iconBg: '#383E56',
     date: 'Jan 2021 - Feb 2022',
     points: [
       "Built a django backend to aid in automating many of the bussiness's manual tasks.",
@@ -170,14 +207,23 @@ const experiences = [
     title: 'Junior DevOps Engineer',
     company_name: 'Digitata (Pty) Ltd',
     icon: digitata,
-    iconBg: '#383E56',
-    date: 'Oct 2023 - Present',
+    date: 'Oct 2023 - Feb 2024',
     points: [
       'Developing and maintaining web applications using Vue.js and other related technologies.',
-      'Collaborating cross-departmentally to optimize customer experience, incident resolution, and strategic planning',
-      'Maintaining and putting existing deploy architecture into code, using ansible, terrafrom and related tools',
+      'Collaborating cross-departmentally to optimize customer experience, incident resolution, and strategic planning.',
+      'Maintaining and putting existing deploy architecture into code, using ansible, terrafrom and related tools.',
     ],
   },
+  {
+    title: 'Fullstack Engineer',
+    company_name: 'CHEQSITE GmbH',
+    icon: cheqsite,
+    date: 'Feb 2024 - Present',
+    points: [
+      'Worked on External projects and internal projects, in a fast pasted team.',
+      'Worked with various tools and techniques to improve solutions scalability, function, and design.'
+    ]
+  }
 ];
 
 const testimonials = [

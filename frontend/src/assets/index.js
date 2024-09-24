@@ -25,6 +25,7 @@ import threejs from './tech/go.png';
 import cybermint from './company/cybermint.png';
 import currencyassist from './company/currencyassist.png';
 import digitata from './company/digitata.png';
+import cheqsite from './company/cheqsite.png'
 
 import carrent from './carrent.png';
 import jobit from './jobit.png';
@@ -59,4 +60,5 @@ export {
   carrent,
   jobit,
   repl,
+  cheqsite,
 };
