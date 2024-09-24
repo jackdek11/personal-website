@@ -16,11 +16,10 @@ const ExperienceCard = ({ experience }) => {
   return (
     <VerticalTimelineElement
       contentStyle={{
-        background: '#080808',
+        background: '#333333',
         color: '#fff',
       }}
-      contentArrowStyle={{ borderRight: '7px solid  #999999' }}
-      date={experience.date}
+      contentArrowStyle={{ borderRight: '7px solid' }}
       iconStyle={{ background: experience.iconBg }}
       icon={
         <div className="flex justify-center items-center w-full h-full">
@@ -34,6 +33,12 @@ const ExperienceCard = ({ experience }) => {
     >
       <div>
         <h3 className="text-white text-[24px] font-bold">{experience.title}</h3>
+        <p
+          className="text-secondary text-[10px] font-light italic"
+          style={{ margin: 0, fontSize: 12, marginBottom: 2, marginTop: 1 }}
+        >
+          {experience.date}
+        </p>
         <p
           className="text-secondary text-[16px] font-semibold"
           style={{ margin: 0 }}
@@ -60,9 +65,6 @@ const Experience = () => {
   return (
     <>
       <motion.div variants={textVariant()}>
-        <p className={`${styles.sectionSubText} text-center`}>
-          What I have done so far
-        </p>
         <h2 className={`${styles.sectionHeadText} text-center`}>
           Work Experience.
         </h2>
