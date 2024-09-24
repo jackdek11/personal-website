@@ -4,42 +4,38 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
-  Tech,
   Works,
-  StarsCanvas,
 } from './components';
+import img1 from './assets/out.png';
 
 const App = () => {
+  const DefaultStyles = {
+    background: `url(${img1})`
+  }
+
   return (
     <BrowserRouter>
-      <div className="relative z-0 bg-primary">
+      <div className="relative z-0 bg-primary" style={DefaultStyles}>
         <div className="bg-hero-pattern bg-cover bg-no-repeat bg-center">
           <Navbar />
           <div className="relative z-0">
             <Hero />
-            <StarsCanvas />
           </div>
         </div>
         <div className="relative z-0">
           <About />
-          <StarsCanvas />
         </div>
         <div className="relative z-0">
           <Experience />
-          <StarsCanvas />
         </div>
         <div className="relative z-0">
           {/* <Tech /> */}
           <Works />
-          <StarsCanvas />
         </div>
         <div className="relative z-0">
-          
           <Contact />
-          <StarsCanvas />
         </div>
         {/* <Feedbacks /> */}
       </div>
