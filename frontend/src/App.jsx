@@ -8,7 +8,7 @@ import {
   Navbar,
   Works,
 } from './components';
-import img1 from './assets/out.png';
+import img1 from './assets/Background.png';
 
 const App = () => {
   const DefaultStyles = {
