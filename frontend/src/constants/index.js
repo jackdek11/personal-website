@@ -22,6 +22,7 @@ import {
   jobit,
   repl,
   threejs,
+  cheqsite,
 } from '../assets';
 
 export const navLinks = [
@@ -41,19 +42,23 @@ export const navLinks = [
 
 const services = [
   {
-    title: 'Fullstack Developer',
-    icon: web,
+    title: 'Backend Developer',
+    icon: backend,
     hoverText: [
-      'Some text for being a fullstack dev',
+      '3+ years of experience',
       [
         {
-          title: 'This website',
-          links: '#',
+          title: 'Teamfu',
+          link: 'https://teamfu.tech/',
         },
         {
-          title: 'Python',
-          link: 'https://github.com/Cyber-Mint/wg-vpn',
+          title: 'Cheqsite ',
+          link: "https://play.google.com/store/apps/dev?id=7533131069311164381&hl=en&pli=1"
         },
+        {
+          title: "Currency Assist",
+          link: 'https://currencyassist.co.za/'
+        }
       ],
     ],
   },
@@ -61,24 +66,40 @@ const services = [
     title: 'DevOps Engineer',
     icon: mobile,
     hoverText: [
-      'Some text on being a devops engineer',
+      '3+ years of experience',
       [
         {
-          title: 'CI / CD',
-          link: 'https://app.circleci.com/pipelines/github/jackdek11/personal-website?branch=main',
+          title: 'This website',
+          link: 'https://app.circleci.com/pipelines/github/jackdek11/personal-website',
         },
+        {
+          title: 'Teamfu ',
+          link: 'https://teamfu.tech/',
+        },
+        {
+          title: "Currency Assist",
+          link: 'https://currencyassist.co.za/'
+        }
       ],
     ],
   },
   {
-    title: 'Backend Developer',
-    icon: backend,
+    title: 'Fullstack Developer',
+    icon: web,
     hoverText: [
-      'Some text for being a backend dev',
+      '2+ years of experience',
       [
         {
-          title: 'Teamfu',
+          title: 'This website',
+          link: 'https://github.com/jackdek11/personal-website',
+        },
+        {
+          title: 'Teamfu ',
           link: 'https://teamfu.tech/',
+        },
+        {
+          title: 'Wg-VPN',
+          link: 'https://github.com/Cyber-Mint/wg-vpn',
         },
       ],
     ],
@@ -87,12 +108,16 @@ const services = [
     title: 'Cloud Engineer',
     icon: creator,
     hoverText: [
-      'Some text for being a cloud engineer',
+      '3+ years of experience',
       [
         {
           title: 'Terraform',
           link: 'https://github.com/jackdek11/terraform-course/tree/main',
         },
+        {
+          title: 'Digitata',
+          link: 'https://digitata.com/'
+        }
       ],
     ],
   },
@@ -182,13 +207,23 @@ const experiences = [
     title: 'Junior DevOps Engineer',
     company_name: 'Digitata (Pty) Ltd',
     icon: digitata,
-    date: 'Oct 2023 - Present',
+    date: 'Oct 2023 - Feb 2024',
     points: [
       'Developing and maintaining web applications using Vue.js and other related technologies.',
-      'Collaborating cross-departmentally to optimize customer experience, incident resolution, and strategic planning',
-      'Maintaining and putting existing deploy architecture into code, using ansible, terrafrom and related tools',
+      'Collaborating cross-departmentally to optimize customer experience, incident resolution, and strategic planning.',
+      'Maintaining and putting existing deploy architecture into code, using ansible, terrafrom and related tools.',
     ],
   },
+  {
+    title: 'Fullstack Engineer',
+    company_name: 'CHEQSITE GmbH',
+    icon: cheqsite,
+    date: 'Feb 2024 - Present',
+    points: [
+      'Worked on External projects and internal projects, in a fast pasted team.',
+      'Worked with various tools and techniques to improve solutions scalability, function, and design.'
+    ]
+  }
 ];
 
 const testimonials = [
