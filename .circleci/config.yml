@@ -211,7 +211,7 @@ jobs:
 
 workflows:
   version: 2
-  untagged_build_test:
+  build_and_deploy:
     jobs:
       - git-leaks
       - ansible-lint
@@ -222,8 +222,7 @@ workflows:
           requires:
             - build-backend
 
-  deploy:
-    jobs:
+      # Deploy frontend on tags
       - deploy-frontend:
           requires:
             - build-frontend
@@ -234,6 +233,8 @@ workflows:
               ignore: /.*/  # Ignore all branches
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/  # Only deploy on tags like vX.X.X (semantic versioning)
+
+      # Deploy backend on tags
       - deploy-backend:
           requires:
             - test-backend
