@@ -12,4 +12,5 @@ services:
     command: 'uvicorn main:app --host 0.0.0.0 --port 8000'
     environment:
       - WEBHOOK_URL=${WEBHOOK_URL}
+      - WEBHOOK_AT_USER=${WEBHOOK_AT_USER}
     network_mode: host
