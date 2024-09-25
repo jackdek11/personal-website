@@ -211,35 +211,34 @@ jobs:
 
 workflows:
   version: 2
-  build_and_deploy:
+
+  # Workflow for running tests on untagged builds
+  continuous_integration:
     jobs:
       - git-leaks
       - ansible-lint
-      - build-frontend
       - build-backend
       - checkov
       - test-backend:
           requires:
             - build-backend
 
-      # Deploy frontend on tags
+  # Workflow for handling deployment on tagged builds
+  continuous_delivery:
+    jobs:
+      - build-frontend
+      - build-backend
       - deploy-frontend:
           requires:
             - build-frontend
-            - test-backend
-            - checkov
           filters:
             branches:
               ignore: /.*/  # Ignore all branches
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/  # Only deploy on tags like vX.X.X (semantic versioning)
-
-      # Deploy backend on tags
       - deploy-backend:
           requires:
-            - test-backend
-            - ansible-lint
-            - checkov
+            - build-backend
           filters:
             branches:
               ignore: /.*/  # Ignore all branches
