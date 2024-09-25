@@ -9,6 +9,7 @@ logger = logging.getLogger(__name__)
 
 class Settings(BaseSettings):
     webhook_url: str = os.getenv('WEBHOOK_URL')
+    webhook_at_user: str = os.getenv('WEBHOOK_AT_USER', default='here')
 
 
 settings = Settings()
