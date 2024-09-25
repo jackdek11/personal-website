@@ -9,5 +9,5 @@ services:
     command: 'uvicorn main:app --host 0.0.0.0 --port 8000'
     environment:
       - WEBHOOK_URL={{ webhook_url }}
-      - WEBHOOK_AT_USER={{ webhook_at_user }}
+      - WEBHOOK_PREFIX={{ webhook_prefix }}
     network_mode: host

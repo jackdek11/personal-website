@@ -1,3 +1,3 @@
 ---
 webhook_url: "{{ lookup('env', 'PROD_WEBHOOK_URL') }}"
-webhook_at_user: "{{ lookup('env', 'PROD_WEBHOOK_AT_USER') }}"
+webhook_prefix: "{{ lookup('env', 'PROD_WEBHOOK_PREFIX') }}"
