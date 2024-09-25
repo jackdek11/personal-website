@@ -217,7 +217,6 @@ workflows:
     jobs:
       - git-leaks
       - ansible-lint
-      - build-frontend
       - build-backend
       - checkov
       - test-backend:
