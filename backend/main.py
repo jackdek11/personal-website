@@ -25,8 +25,8 @@ app.add_middleware(
 
 
 @app.post("/api/email/")
-async def eft_checkout_request_view(body: RequestBody):
-    built_msg = f"@{settings.webhook_prefix}\n\n**New message received:**\n```email: {body.email}\nname: {body.name}\nmsg: {body.msg}```"
+async def receive_message_view(body: RequestBody):
+    built_msg = f"{settings.webhook_prefix}\n\n**New message received:**\n```email: {body.email}\nname: {body.name}\nmsg: {body.msg}```"
     logger.debug(f"Receiving: {built_msg}")
     webhook = DiscordWebhook(
         url=settings.webhook_url,
