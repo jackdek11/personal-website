@@ -232,15 +232,11 @@ workflows:
           requires:
             - build-frontend
           filters:
-            branches:
-              ignore: /.*/  # Ignore all branches
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/  # Only deploy on tags like vX.X.X (semantic versioning)
       - deploy-backend:
           requires:
             - build-backend
           filters:
-            branches:
-              ignore: /.*/  # Ignore all branches
             tags:
               only: /^v[0-9]+\.[0-9]+\.[0-9]+$/  # Only deploy on tags like vX.X.X (semantic versioning)
